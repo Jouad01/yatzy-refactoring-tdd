@@ -1,4 +1,4 @@
-import pytest
+'''import pytest 
 from yatzy import Yatzy
 
 # Chance
@@ -24,4 +24,4 @@ def test_fours(inyector):
     valorEsperado = 4
     # No puedo testear con fixtures = inyeccion de dependencias
     # los metodos estaticos como chance()
-    assert valorEsperado == inyector.fours()
+    assert valorEsperado == inyector.fours()'''
