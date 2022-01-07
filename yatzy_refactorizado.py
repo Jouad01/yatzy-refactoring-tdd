@@ -15,13 +15,11 @@ class Yatzy:
     
     @staticmethod
     def ones(*dice):
-        ONE = 1
-        return dice.count(ONE) * ONE
+        return dice.count(1) * 1
 
     @staticmethod
     def twos(*dice):
-        TWO = 2
-        return dice.count(TWO) * TWO
+        return dice.count(2) * 2
 
 # Pendiente refactorizar funcion threes a sixes
 
@@ -71,18 +69,16 @@ class Yatzy:
 
     @staticmethod
     def three_of_kind(*dice):
-        THREE = 3
         for number in range(6, 0, -1):
-            if dice.count(number) >= THREE:
-                return THREE * number
+            if dice.count(number) >= 3:
+                return 3 * number
         return 0
     
     @staticmethod
     def four_of_kind(*dice):
-        FOUR = 4
         for number in range(6, 0, -1):
-            if dice.count(number) >= FOUR:
-                return FOUR * number
+            if dice.count(number) >= 4:
+                return 4 * number
         return 0
     
     @staticmethod
@@ -107,9 +103,8 @@ class Yatzy:
     
     @staticmethod
     def down_pair(*dice):
-        PAIR = 2
         for number in range(6, 0, -1):
-            if dice.count(number) == PAIR:
-                return PAIR * number
+            if dice.count(number) == 2:
+                return 2 * number
         return 0
         
