@@ -66,28 +66,28 @@ class Yatzy:
     @classmethod
     def two_pairs(cls, *dice):
         PAIR = 2
-        pips_pairs = cls.__filter_pips_repeated(dice, PAIR)
+        pips_pairs = cls._pips_repeated(dice, PAIR)
         return sum(pips_pairs) * PAIR if len(pips_pairs) == 2 else 0
 
     @classmethod
     def three_of_kind(cls, *dice):
         THREE = 3
-        pip = cls.__biggest_pip_repeated(dice, THREE)
+        pip = cls._big_pip_repeated(dice, THREE)
         return pip * THREE if pip else 0
 
     @classmethod
     def four_of_kind(cls, *dice):
         FOUR = 4
-        pip = cls.__biggest_pip_repeated(dice, FOUR)
+        pip = cls._big_pip_repeated(dice, FOUR)
         return pip * FOUR if pip else 0
 
     @classmethod
-    def __biggest_pip_repeated(cls, dice, times):
-        pips = cls.__filter_pips_repeated(dice, times)
+    def _big_pip_repeated(cls, dice, times):
+        pips = cls._pips_repeated(dice, times)
         return pips[0] if pips else []
 
     @classmethod
-    def __filter_pips_repeated(cls, dice, times):
+    def _pips_repeated(cls, dice, times):
         return list(filter(lambda pip: dice.count(pip) >= times, Pips.reversedRange()))
 
     @classmethod
