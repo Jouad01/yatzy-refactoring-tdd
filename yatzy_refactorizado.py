@@ -102,8 +102,7 @@ class Yatzy:
     def full_house(cls, *dice):
         if cls.down_pair(*dice) and cls.three_of_kind(*dice):
             return cls.down_pair(*dice) + cls.three_of_kind(*dice)
-        else:
-            return 0
+        return 0
 
     @classmethod
     def down_pair(cls, *dice):
